@@ -33,6 +33,5 @@ public class SeparetedProduct {
     private String idSkuOrigem;
     private Double quantidadeEstoque;
     private String skuNetshoes;
-    private String cluster;
-    private String distancia;
+    private Cluster cluster;
 }
