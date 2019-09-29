@@ -1,7 +1,7 @@
 package com.netshoes.matchnet.modulos.separator.domain;
 
-import com.netshoes.matchnet.domain.Dimensao;
-import com.netshoes.matchnet.domain.Lojista;
+import com.netshoes.matchnet.domain.sellerProducts.Dimensao;
+import com.netshoes.matchnet.domain.sellerProducts.Lojista;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

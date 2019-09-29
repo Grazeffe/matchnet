@@ -1,6 +1,8 @@
 package com.netshoes.matchnet.gateway.mongo;
 
-import com.netshoes.matchnet.domain.SellerProducts;
+import com.netshoes.matchnet.domain.netsProducts.NetshoesProducts;
+import com.netshoes.matchnet.domain.sellerProducts.SellerProducts;
+import com.netshoes.matchnet.modulos.separator.gateway.feign.json.ClusteredProducts;
 
 import java.util.List;
 
@@ -11,5 +13,8 @@ import java.util.List;
 
 public interface MongoGateway {
 
-    void cadastrarTodos(List<SellerProducts> sellerProducts);
+    void cadastrarTodosSeller(List<SellerProducts> sellerProducts);
+    void cadastrarTodosNets(List<NetshoesProducts> netsProducts);
+    List<SellerProducts> buscarTodosSellerProducts();
+    void saveCluesteredProducts(List<ClusteredProducts> clusteredProducts);
 }

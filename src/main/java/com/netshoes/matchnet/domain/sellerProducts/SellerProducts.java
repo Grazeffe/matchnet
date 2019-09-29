@@ -1,4 +1,4 @@
-package com.netshoes.matchnet.domain;
+package com.netshoes.matchnet.domain.sellerProducts;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
