@@ -3,9 +3,9 @@ package com.netshoes.matchnet.modulos.separator.gateway.impl;
 import com.netshoes.matchnet.domain.sellerProducts.SellerProducts;
 import com.netshoes.matchnet.modulos.separator.gateway.SmartSeparatorGateway;
 import com.netshoes.matchnet.modulos.separator.gateway.feign.ProductSpliteratorFeignClient;
-import com.netshoes.matchnet.modulos.separator.gateway.feign.json.ClusteredProducts;
 import com.netshoes.matchnet.modulos.separator.gateway.feign.json.SeparatorData;
 import com.netshoes.matchnet.modulos.separator.gateway.feign.json.SeparatorRequestBody;
+import com.netshoes.matchnet.modulos.separator.gateway.feign.json.SpliteratorResponseBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +22,7 @@ public class SmartSeparatorGatewayImpl implements SmartSeparatorGateway {
     private final ProductSpliteratorFeignClient productSpliteratorFeignClient;
 
     @Override
-    public List<ClusteredProducts> startSeparatorEngine(List<SellerProducts> sellerProducts) {
+    public SpliteratorResponseBody startSeparatorEngine(List<SellerProducts> sellerProducts) {
         SeparatorRequestBody requestBody = new SeparatorRequestBody();
         SeparatorData data = new SeparatorData();
         requestBody.setData(sellerProducts);

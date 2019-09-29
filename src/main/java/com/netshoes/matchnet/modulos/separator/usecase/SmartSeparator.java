@@ -4,6 +4,7 @@ import com.netshoes.matchnet.domain.sellerProducts.SellerProducts;
 import com.netshoes.matchnet.gateway.mongo.MongoGateway;
 import com.netshoes.matchnet.modulos.separator.gateway.SmartSeparatorGateway;
 import com.netshoes.matchnet.modulos.separator.gateway.feign.json.ClusteredProducts;
+import com.netshoes.matchnet.modulos.separator.separatorConverter.SeparatorConverterUC;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -19,10 +20,10 @@ public class SmartSeparator {
 
     private final MongoGateway mongoGateway;
     private final SmartSeparatorGateway smartSeparatorGateway;
+    private final SeparatorConverterUC separatorConverterUC;
 
-    public void execute() {
+    public List<ClusteredProducts> execute() {
         List<SellerProducts> sellerProducts = mongoGateway.buscarTodosSellerProducts();
-        List<ClusteredProducts> clusteredProducts = smartSeparatorGateway.startSeparatorEngine(sellerProducts);
-        mongoGateway.saveCluesteredProducts(clusteredProducts);
+        return separatorConverterUC.spliteratorResponseToClusteredProducts(smartSeparatorGateway.startSeparatorEngine(sellerProducts));
     }
 }

@@ -1,6 +1,14 @@
 server:
   port: 9401
+  session:
+    timeout: 600s
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
 spring:
   data:
     mongodb:

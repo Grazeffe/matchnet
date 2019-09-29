@@ -1,6 +1,5 @@
 package com.netshoes.matchnet.modulos.separator.gateway.feign.json;
 
-import com.netshoes.matchnet.domain.sellerProducts.SellerProducts;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +13,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SeparatorRequestBody {
-
-    private List<SellerProducts> data;
+public class SpliteratorResponseBody {
+    private List<ClusteredProducts> response;
 }
