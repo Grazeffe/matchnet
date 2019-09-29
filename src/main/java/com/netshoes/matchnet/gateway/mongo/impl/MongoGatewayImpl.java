@@ -19,6 +19,6 @@ public class MongoGatewayImpl implements MongoGateway {
     private final SellerProductsRepository sellerProductsRepository;
 
     public void cadastrarTodos(List<SellerProducts> sellerProducts) {
-        sellerProductsRepository.save(sellerProducts.get(0));
+        sellerProductsRepository.saveAll(sellerProducts);
     }
 }
